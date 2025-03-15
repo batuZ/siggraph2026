@@ -1,6 +1,6 @@
 {
     "project_name": "Siggraph2024",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "project_id": "{2EC9F2AD-099F-43C8-A200-91135CDCF48F}",
     "origin": "The primary repo for Siggraph2024 goes here: i.e. http://www.mydomain.com",
     "license": "What license Siggraph2024 uses goes here: i.e. https://opensource.org/licenses/Apache-2.0 Or https://opensource.org/licenses/MIT etc.",
@@ -37,7 +37,7 @@
         "ScriptEvents",
         "ScriptedEntityTweener",
         "Siggraph2024",
-        "Siggraph2024Gem==1.0.0",
+        "Siggraph2024Gem==1.0.1",
         "Stars",
         "StartingPointInput",
         "Terrain",

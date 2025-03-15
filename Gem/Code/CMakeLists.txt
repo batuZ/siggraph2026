@@ -31,9 +31,7 @@ ly_add_target(
         INTERFACE
            AZ::AzCore
            Gem::Atom_RPI.Public
-           Gem::Atom_Feature_Common
            Gem::Atom_Feature_Common.Public
-           Gem::Atom_Feature_Common.Static
 )
 
 # The ${gem_name}.Private.Object target is an internal target
@@ -56,8 +54,7 @@ ly_add_target(
             AZ::AzFramework
             Gem::Atom_RPI.Public
             Gem::Atom_Utils.Static
-            Gem::Atom_Feature_Common
-            Gem::CommonFeaturesAtom.Static
+            Gem::Atom_Feature_Common.Public
 )
 
 # Here add ${gem_name} target, it depends on the Private Object library and Public API interface
@@ -144,8 +141,7 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
                 AZ::AzToolsFramework
                 $<TARGET_OBJECTS:Gem::${gem_name}.Private.Object>
                 Gem::Atom_Utils.Static
-                Gem::Atom_Feature_Common.Static
-                Gem::CommonFeaturesAtom.Static
+                Gem::Atom_Feature_Common.Public
     )
 
     ly_add_target(

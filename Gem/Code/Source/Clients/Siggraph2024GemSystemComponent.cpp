@@ -80,13 +80,16 @@ namespace Siggraph2024Gem
 
         AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<StickerFeatureProcessor, StickerFeatureProcessorInterface>();
 
-        // Register the event handler that helps us register our custom pass templates.
-        m_loadTemplatesHandler = AZ::RPI::PassSystemInterface::OnReadyLoadTemplatesEvent::Handler(
-            [&]() {
-                LoadPassTemplateMappings();
-            }
-        );
-        AZ::RPI::PassSystemInterface::Get()->ConnectEvent(m_loadTemplatesHandler);
+        ////////////////////////////////////////////////////////////////////
+        //! Attention: see header file why this is being commented out
+        //! 
+        // // Register the event handler that helps us register our custom pass templates.
+        // m_loadTemplatesHandler = AZ::RPI::PassSystemInterface::OnReadyLoadTemplatesEvent::Handler(
+        //     [&]() {
+        //         LoadPassTemplateMappings();
+        //     }
+        // );
+        // AZ::RPI::PassSystemInterface::Get()->ConnectEvent(m_loadTemplatesHandler);
 
     }
 
@@ -97,10 +100,13 @@ namespace Siggraph2024Gem
         Siggraph2024GemRequestBus::Handler::BusDisconnect();
     }
 
-    void Siggraph2024GemSystemComponent::LoadPassTemplateMappings()
-    {
-        constexpr char passTemplatesFile[] = "Passes/Siggraph2024Gem/PassTemplates.azasset";
-        AZ::RPI::PassSystemInterface::Get()->LoadPassTemplateMappings(passTemplatesFile);
-    }
+    ////////////////////////////////////////////////////////////////////
+    //! Attention: see header file why this is being commented out
+    //! 
+    // void Siggraph2024GemSystemComponent::LoadPassTemplateMappings()
+    // {
+    //     constexpr char passTemplatesFile[] = "Passes/Siggraph2024Gem/PassTemplates.azasset";
+    //     AZ::RPI::PassSystemInterface::Get()->LoadPassTemplateMappings(passTemplatesFile);
+    // }
 
 } // namespace Siggraph2024Gem

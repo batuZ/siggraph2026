@@ -47,12 +47,20 @@ namespace Siggraph2024Gem
         void Deactivate() override;
         ////////////////////////////////////////////////////////////////////////
 
-        // Load pass template mappings for this Gem.
-        void LoadPassTemplateMappings();
+        ////////////////////////////////////////////////////////////////////////
+        //! ATTENTION: Begin
+        //! The following code was commented out because since Dec 14th, 2024 it is possible
+        //! to register Pass Template Mapping assets without C++. See details in this wiki:
+        //! https://github.com/o3de/o3de/wiki/%5BAtom%5D-Work-With-Passes-In-Gems
+        // // Load pass template mappings for this Gem.
+        // void LoadPassTemplateMappings();
+        // 
+        // // We use this event handler to add our Pass Templates to the RPI::PassSystem.
+        // // The callback will invoke this->LoadPassTemplateMappings()
+        // AZ::RPI::PassSystemInterface::OnReadyLoadTemplatesEvent::Handler m_loadTemplatesHandler;
+        //! ATTENTION: End
+        ////////////////////////////////////////////////////////////////////////
 
-        // We use this event handler to add our Pass Templates to the RPI::PassSystem.
-        // The callback will invoke this->LoadPassTemplateMappings()
-        AZ::RPI::PassSystemInterface::OnReadyLoadTemplatesEvent::Handler m_loadTemplatesHandler;
 
     };
 
