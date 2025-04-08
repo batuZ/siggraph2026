@@ -20,4 +20,4 @@ Open ./Project/README.md for instructions.
 Open ./Gem/README.md for instructions.
 
 # Presentation PDF
-Available [here](./Customizing%20The%20O3DE%20Graphics%20Pipeline.pdf)
+Available [here](./Customizing%20The%20O3DE%20Graphics%20Pipeline%20v1.0.1.pdf)
