@@ -1,10 +1,10 @@
 {
     "project_name": "Siggraph2024",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "project_id": "{2EC9F2AD-099F-43C8-A200-91135CDCF48F}",
     "origin": "The primary repo for Siggraph2024 goes here: i.e. http://www.mydomain.com",
     "license": "What license Siggraph2024 uses goes here: i.e. https://opensource.org/licenses/Apache-2.0 Or https://opensource.org/licenses/MIT etc.",
-    "display_name": "Siggraph2024",
+    "display_name": "Siggraph2026",
     "summary": "A short description of Siggraph2024.",
     "canonical_tags": [
         "Project"
@@ -13,7 +13,7 @@
         "Siggraph2024"
     ],
     "icon_path": "preview.png",
-    "engine": "o3de",
+    "engine": "o3de-sdk",
     "external_subdirectories": [
         "../Gem",
         "Gem"
@@ -45,5 +45,5 @@
         "WhiteBox"
     ],
     "restricted": "Siggraph2024",
-    "engine_version": "4.2.0"
+    "engine_version": "2.5.2"
 }

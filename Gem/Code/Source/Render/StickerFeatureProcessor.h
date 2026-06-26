@@ -73,7 +73,7 @@ namespace Siggraph2024Gem
             //! The idea is that each DrawItem represents the same object but
             //! rendered at a different Pass. In other words each DrawItem is
             //! connected to a Pass. We only use one RasterPass.
-            AZ::RHI::GeometryView m_geometryView;
+            AZ::RHI::GeometryView m_geometryView{ AZ::RHI::MultiDevice::AllDevices };
             AZ::RHI::ConstPtr<AZ::RHI::DrawPacket> m_drawPacket;
             //! The DrawSrg needs update. Most likely the texture asset for this
             //! sticker changed.

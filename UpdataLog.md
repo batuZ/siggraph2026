@@ -1,0 +1,2 @@
+### Customizing The O3DE Graphics Pipeline v1.0.1.pdf page 33:
+--r_renderPipelinePath=Passes/Siggraph2024Gem/SiggraphRenderPipeline.azasset 改为 --r_renderPipelinePath=Passes/Siggraph2024Gem/NormalVectorDisplayRenderPipeline.azasset
