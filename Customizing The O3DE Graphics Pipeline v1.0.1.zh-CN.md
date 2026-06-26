@@ -575,9 +575,9 @@ Hello World Mesh Rendering（无 C++）
 
 使用命令行参数：
 
-<code style="color:red">
+``` text
 --r_renderPipelinePath=Passes/Siggraph2024Gem/SiggraphRenderPipeline.azasset
-</code>
+```
 
 不传命令行参数时，会使用 `MainRenderPipeline.azasset`。
 
@@ -619,25 +619,36 @@ Draw Item 里包含一个 cylinder 的 Draw Item。它包含 VS 与 PS 的二进
 #include <scenesrg_all.srgi>
 #include <viewsrg_all.srgi>
 #include <Atom/Features/PBR/DefaultObjectSrg.azsli>
-struct VSInput {
+
+struct VSInput
+{
     float3 m_position : POSITION;
     float3 m_normal : NORMAL;
 };
-struct VSOutput {
+
+struct VSOutput
+{
     float4 m_position : SV_Position;
     float3 m_normal: NORMAL;
 };
-VSOutput MainVS(VSInput IN) {
+
+VSOutput MainVS(VSInput IN)
+{
     VSOutput OUT;
-    float3 worldPosition = mul(ObjectSrg::GetWorldMatrix(), float4(IN.m_position, 1.0)).xyz;
-    OUT.m_position = mul(ViewSrg::m_viewProjectionMatrix, float4(worldPosition, 1.0));
+    float4x4 objectToWorld = SceneSrg::GetObjectToWorldMatrix(ObjectSrg::m_objectId);
+    float4 worldPosition = mul(objectToWorld, float4(IN.m_position, 1.0));
+    OUT.m_position = mul(ViewSrg::m_viewProjectionMatrix, worldPosition);
     OUT.m_normal = IN.m_normal;
     return OUT;
 }
-struct PSOutput {
+
+struct PSOutput
+{
     float4 m_color : SV_Target0;
 };
-PSOutput MainPS(VSOutput IN) {
+
+PSOutput MainPS(VSOutput IN)
+{
     PSOutput OUT;
     OUT.m_color = float4(normalize(IN.m_normal), 1.0);
     return OUT;
